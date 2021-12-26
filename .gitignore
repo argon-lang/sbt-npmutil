@@ -5,3 +5,5 @@
 metals.sbt
 
 target/
+
+/sonatype.sbt

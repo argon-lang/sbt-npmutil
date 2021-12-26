@@ -1,9 +1,11 @@
-ThisBuild / version := "0.1.0"
+ThisBuild / version := "0.1.1"
 ThisBuild / organization := "dev.argon"
 ThisBuild / organizationName := "Argon"
 ThisBuild / organizationHomepage := Some(url("https://github.com/argon-lang"))
 ThisBuild / homepage := Some(url("https://github.com/argon-lang/sbt-npmutil"))
 ThisBuild / licenses := Seq("Apache 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
+ThisBuild / versionScheme := Some("semver-spec")
+ThisBuild / publishTo := sonatypePublishToBundle.value
 
 ThisBuild / scmInfo := Some(
     ScmInfo(
@@ -31,6 +33,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "sbt-npmutil",
     description := "NPM Util SBT Plugin",
+    publishMavenStyle := true,
     
     pluginCrossBuild / sbtVersion := {
       scalaBinaryVersion.value match {
